@@ -1,7 +1,9 @@
 NextTripTicket
 ==============
 
-A new adventure start for travel lovers
+A new adventure start for travel lovers!
+
+* Documentation: http://goo.gl/5lbSK
 
 ###### WORK IN PROGRESS
 
