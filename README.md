@@ -24,6 +24,6 @@ rm bootstrap.zip
 wget http://code.jquery.com/jquery-latest.min.js
 mv jquery-latest.min.js js/jquery.js
 
-wget https://github.com/jaubourg/jquery-jsonp
+wget https://raw.github.com/jaubourg/jquery-jsonp/master/src/jquery.jsonp.js
 mv jquery.jsonp.js js/
 ```
