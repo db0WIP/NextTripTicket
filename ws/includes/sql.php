@@ -29,7 +29,7 @@ function	select_one($query, $data = array()) {
 
 function	select_count($tab) {
   $rsp = select_one('SELECT count(*) AS nb FROM '.$tab);
-  return $rsp['nb'];
+  return intval($rsp['nb']);
 }
 
 

@@ -11,11 +11,14 @@ require_once('requests/reviews.php');
 require_once('requests/tickets.php');
 
 $get_city_required = array('city_id');
-$city_defaults = array();
+$city_defaults = array('with_tickets' => true,
+		       'with_reviews' => false);
 $get_city_default = array_merge($city_defaults, $get_tickets_default, $get_reviews_default);
 
 function	ws_get_city($p) {
   $c = select_one('SELECT c.*, d.* FROM cities AS c JOIN cities_details AS d WHERE c.id=? AND d.id=c.id',
+		  // todo .($p['with_tickets'] === true ? ' AND (SELECT count(*) FROM tickets AS tt WHERE tt.city=d.id)>0' : '')
+		  // todo .(''),
 		  array($p['city_id']));
   $rsp = array('id' => $c['id'],
 	       'name' => $c['City'],

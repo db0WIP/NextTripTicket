@@ -12,6 +12,7 @@
 
 body {
     background: url('../img/wallpapers/blurry_colorful.jpg');
+    background-attachment: fixed;
     font-family: Tahoma, Verdana, sans-serif;
     color: black;
 }
@@ -61,8 +62,65 @@ header {
     }
 }
 
+#myslides {
+    width: 340px;
+    height: 300px;
+    float: right;
+    padding: 0;
+    margin:  0 auto;
+    margin-top: 20px;
+    margin-right: 25%;
+    a {
+	padding: 10px;
+	border:  1px solid rgb(100,100,100);
+	background-color: rgb(230,230,230);
+	width: 320px;
+	top:  0;
+	left: 0;
+    }
+}
+
+iframe {
+    width: 100%;
+    height: 700px;
+    border: none;
+}
+
+table {
+    width: 100%;
+    background: white;
+}
+
+table, .well {
+    margin-right: auto;
+    margin-left: auto;
+    a {
+	color: green;
+	&:hover {
+	    color: green;
+	    text-decoration: underline;
+	}
+    }
+    th small {
+	font-weight: normal;
+	font-style: italic;
+    }
+}
+
+.white {
+    color: white;
+}
+
+.pagination a {
+    color: green;
+}
+.alert a {
+    color: inherit;
+    font-weight: bold;
+}
 
 footer {
+    clear: both;
     color: fadeout(white, 40%);
     text-align: center;
     font-size: 0.9em;
@@ -73,5 +131,10 @@ footer {
 	    text-decoration: underline;
 	}
     }
+}
+
+
+.hidden {
+    display: none;
 }
 

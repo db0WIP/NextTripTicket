@@ -13,12 +13,15 @@
 
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <?php if ($dev) { ?>
+<?php if ($dev) { ?>
     <link href="css/style.less" rel="stylesheet/less" type="text/css" />
     <script src="https://raw.github.com/cloudhead/less.js/master/dist/less-1.3.3.min.js" type="text/javascript"></script>
-    <?php } else { ?>
+<?php } else { ?>
     <link href="css/style.css" rel="stylesheet" type="text/css" />
-    <? } ?>
+<? } ?>
+    <script>
+      var api_url = '<?= $api_url ?>';
+    </script>
   </head>
   <body<?php
    if ($wallpaper = random_wallper())

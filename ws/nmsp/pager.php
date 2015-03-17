@@ -9,7 +9,9 @@
 namespace Pager;
 
 function	limit($p, $data) {
-  if ($p[$data.'_quantity'] === 'all')
+  if ($p[$data.'_quantity'] === 'all'
+      || $p[$data.'_quantity'] < 0
+      || $p[$data.'_page'] < 0) // todo: return an error
     return '';
   $quantity = intval($p[$data.'_quantity']);
   $page     = intval($p[$data.'_page']);
@@ -20,12 +22,16 @@ function	limit($p, $data) {
 function	rsp($p, $rsp, $tab, $to_count = 0) {
   if (!$to_count)
     $to_count = $tab;
-  if ($p[$tab.'_quantity'] === 'all' || !($p[$tab.'_quantity']))
+  $total = select_count($tab);
+  if ($p[$tab.'_quantity'] === 'all'
+      || !($p[$tab.'_quantity']))
     $count = 1;
   else
-    $count = ceil(select_count($tab) / $p[$tab.'_quantity']);
+    $count = ceil($total / $p[$tab.'_quantity']);
   return array('total_pages' => $count,
-	       'page_number' => $p[$tab.'_page'],
-	       'page_quantity' => $p[$tab.'_quantity'],
+	       'total' => $total,
+	       'page_number' => intval($p[$tab.'_page']),
+	       'page_quantity' => ($p[$tab.'_quantity'] === 'all'
+				   ? 1 : intval($p[$tab.'_quantity'])),
 	       'page' => $rsp);
 }

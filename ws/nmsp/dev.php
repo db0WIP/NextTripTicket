@@ -8,7 +8,7 @@
 
 namespace Dev;
 
-require_once('includes/conf.php');
+require_once('../conf.php');
 
 function	debug($data) {
   global $dev;

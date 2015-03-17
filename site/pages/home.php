@@ -22,23 +22,32 @@ foreach ($tickets as $ticket) {
 	<div class="content_wrap">
 	  <div class="content">
 	    <?= $ticket['content'] ?>
-	  </div>
-	</div>
+	  </div> <!-- content -->
+	</div> <!-- content wrap -->
 	<img src="img/tickets/<?= $ticket['img'] ?>"
              alt="Ticket <?= $ticket['city'] ?>">
-      </div>
+      </div> <!-- ticket -->
     </a>
-  </div>
+  </div> <!-- .span -->
 <?php
-  }
+    }
+?>
+</div> <!-- row-fluid -->
+<?php
 }
 
-
 display_tickets(array(
-		      array('content' => 'Random ticket',
-			    'url' => 'random'),
-		      array('content' => 'Search',
-			    'url' => 'search'),
+		      // array('content' => 'Random ticket',
+		      // 	    'url' => 'random'),
+		      // array('content' => 'Search',
+		      // 	    'url' => 'search'),
 		      array('content' => 'Submit your own ticket',
 			    'url' => 'submit'),
+		      array('content' => 'My account',
+			    'url' => 'account'),
+		      array('content' => 'Contact',
+			    'url' => 'contact'),
 		      ));
+
+include_once('pages/slideshow.php');
+

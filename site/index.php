@@ -6,6 +6,8 @@
 // Latest version, copyright: https://github.com/db0company/NextTripTicket    //
 // ************************************************************************** //
 
+session_start();
+
 require_once('../conf.php');
 require_once('includes/tools.php');
 require_once('includes/header.php');
